@@ -28,13 +28,13 @@ ax.annotate('Deaths: {:,}'.format(int(ma_data['Deaths'][-1])), (dates[-1]+dt.tim
 
 plt.semilogy(dates, ma_data['Suffolk'],'g-')
 plt.semilogy(dates[-1], ma_data['Suffolk'][-1], 'g.')
-ax.annotate('Suffolk: {:,}'.format(int(ma_data['Suffolk'][-1])), (dates[-1]+dt.timedelta(hours=6), 0.65*ma_data['Suffolk'][-1]),
+ax.annotate('Suffolk: {:,}'.format(int(ma_data['Suffolk'][-1])), (dates[-1]+dt.timedelta(hours=6), 1.15*ma_data['Suffolk'][-1]),
         color='green', fontsize=9)
 
 plt.semilogy(dates, ma_data['Middlesex'],'-', color='orange')
 plt.semilogy(dates[-1], ma_data['Middlesex'][-1], '.', color='orange')
 ax.annotate('Middlesex: {:,}'.format(int(ma_data['Middlesex'][-1])), (dates[-1]+dt.timedelta(hours=6),
-    1.15*ma_data['Middlesex'][-1]), color='orange', fontsize=9)
+    0.65*ma_data['Middlesex'][-1]), color='orange', fontsize=9)
 
 ax.set_ylim([0.9,7e6])
 ax.xaxis.set_tick_params(rotation=45, labelsize=10)
