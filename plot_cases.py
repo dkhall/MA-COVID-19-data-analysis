@@ -16,12 +16,12 @@ plt.semilogy(dates[-1], ma_data['Total Tested'][-1], 'b.')
 ax.annotate('Total Tested: {:,}'.format(int(ma_data['Total Tested'][-1])), (dates[-1]+dt.timedelta(hours=6),
     0.85*ma_data['Total Tested'][-1]), color='blue', fontsize=9)
 
-plt.semilogy(dates, ma_data['Confirmed Cases'], 'k-')
+plt.semilogy(dates, ma_data['Confirmed Cases'], 'k.-')
 plt.semilogy(dates[-1], ma_data['Confirmed Cases'][-1], 'k.')
 ax.annotate('Confirmed Cases: {:,}'.format(int(ma_data['Confirmed Cases'][-1])), (dates[-1]+dt.timedelta(hours=6),
     0.85*ma_data['Confirmed Cases'][-1]), color='black', fontsize=9)
 
-plt.semilogy(dates, ma_data['Deaths'], 'r-')
+plt.semilogy(dates, ma_data['Deaths'], 'r.-')
 plt.semilogy(dates[-1], ma_data['Deaths'][-1], 'r.')
 ax.annotate('Deaths: {:,}'.format(int(ma_data['Deaths'][-1])), (dates[-1]+dt.timedelta(hours=6), 0.85*ma_data['Deaths'][-1]),
         color='red', fontsize=9)
