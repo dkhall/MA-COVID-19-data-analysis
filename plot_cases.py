@@ -18,7 +18,7 @@ ax.annotate('Total Tested: {:,}'.format(int(ma_data['Total Tested'][-1])), (date
 
 plt.semilogy(dates, ma_data['Confirmed Cases'], 'k.-')
 plt.semilogy(dates[-1], ma_data['Confirmed Cases'][-1], 'k.')
-ax.annotate('Confirmed Cases: {:,}'.format(int(ma_data['Confirmed Cases'][-1])), (dates[-1]+dt.timedelta(hours=6),
+ax.annotate('Confirmed Cases: {:,}'.format(int(ma_data['Confirmed Cases'][-1])), (dates[-1]+dt.timedelta(hours=12),
     0.85*ma_data['Confirmed Cases'][-1]), color='black', fontsize=9)
 
 plt.semilogy(dates, ma_data['Deaths'], 'r.-')
