@@ -43,3 +43,8 @@ ax.spines['right'].set_visible(False)
 ax.spines['top'].set_visible(False)
 plt.title('COVID-19 in Massachusetts [source: MA DPH]')
 plt.show()
+
+daily_deaths = ma_data['Deaths'].values[1:] - ma_data['Deaths'].values[:-1]
+plt.subplot(3,1,1)
+plt.bar(dates[1:], daily_deaths)
+plt.show()
