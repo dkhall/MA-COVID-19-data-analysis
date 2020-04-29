@@ -16,14 +16,14 @@ fig, ax = plt.subplots()
 #ax.annotate('Total Tested: {:,}'.format(int(ma_data['Total Tested'][-1])), (dates[-1]+dt.timedelta(hours=6),
 #    0.85*ma_data['Total Tested'][-1]), color='blue', fontsize=9)
 
-plt.semilogy(dates, ma_data['Confirmed Cases'], 'k.')
+plt.semilogy(dates, ma_data['Confirmed Cases'], 'k.', ms=3)
 #plt.semilogy(dates[-1], ma_data['Confirmed Cases'][-1], 'k.')
-ax.annotate('Confirmed Cases: {:,}'.format(int(ma_data['Confirmed Cases'][-1])), (dates[-1]+dt.timedelta(hours=12),
-    0.85*ma_data['Confirmed Cases'][-1]), color='black', fontsize=9)
+ax.annotate('Confirmed Cases: {:,}'.format(int(ma_data['Confirmed Cases'][-1])), (dates[-1]+dt.timedelta(hours=24),
+    0.8*ma_data['Confirmed Cases'][-1]), color='black', fontsize=9)
 
-plt.semilogy(dates, ma_data['Deaths'], 'r.')
+plt.semilogy(dates, ma_data['Deaths'], 'r.', ms=3)
 #plt.semilogy(dates[-1], ma_data['Deaths'][-1], 'r.')
-ax.annotate('Deaths: {:,}'.format(int(ma_data['Deaths'][-1])), (dates[-1]+dt.timedelta(hours=12), 0.85*ma_data['Deaths'][-1]),
+ax.annotate('Deaths: {:,}'.format(int(ma_data['Deaths'][-1])), (dates[-1]+dt.timedelta(hours=24), 0.8*ma_data['Deaths'][-1]),
         color='red', fontsize=9)
 
 #plt.semilogy(dates, ma_data['Suffolk'],'g-')
@@ -45,6 +45,11 @@ plt.title('COVID-19 in Massachusetts [source: MA DPH]')
 plt.show()
 
 daily_deaths = ma_data['Deaths'].values[1:] - ma_data['Deaths'].values[:-1]
-plt.subplot(3,1,1)
+fig, ax = plt.subplots()
 plt.bar(dates[1:], daily_deaths)
+ax.xaxis.set_tick_params(rotation=45, labelsize=10)
+fig.subplots_adjust(bottom=0.18, right=0.75)
+ax.spines['right'].set_visible(False)
+ax.spines['top'].set_visible(False)
+plt.ylabel('new reported deaths by day [source: MA DPH]')
 plt.show()
