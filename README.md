@@ -2,4 +2,4 @@
 
 Daily statistics and analysis tools on the spread of SARS-nCoV-2 in the Commonwealth of Massachusetts.
 
-![Daily-updated infection growth plot](daily_cases.png)
+![Daily-updated COVID-19 deaths plot](daily_deaths.png)
